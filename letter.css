@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Special+Elite&display=swap');
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#f2dfc4;
+    font-family:'Special Elite', cursive;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    display:flex;
+    justify-content:center;
+
+    padding:80px 20px;
+
+    position:relative;
+
+    opacity:1;
+    transition:opacity .8s ease;
+
+}
+
+/* ==========================================
+   Background
+========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.18), transparent),
+        url("https://www.transparenttextures.com/patterns/old-map.png");
+
+    opacity:.45;
+
+    z-index:-2;
+
+}
+
+/* ==========================================
+   LETTER SCENE
+========================================== */
+
+.letter-scene{
+
+    width:100%;
+    max-width:1400px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:220px 1fr 220px;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter{
+
+    position:relative;
+
+    width:100%;
+    grid-column: 2;
+
+    min-height:700px;
+
+    padding:70px;
+
+    background:#f8ecd2;
+
+    background-image:
+    repeating-linear-gradient(
+        transparent,
+        transparent 34px,
+        rgba(0,0,0,.03) 35px
+    );
+
+    border-radius:8px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25);
+
+}
+
+/* Burn edges */
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    box-shadow:
+    inset 0 0 35px rgba(60,35,10,.22);
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   Wax Seal
+========================================== */
+
+.wax{
+
+    position:absolute;
+
+    top:-35px;
+    right:45px;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#b3122d;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    box-shadow:
+        inset -6px -6px rgba(0,0,0,.15),
+        0 10px 25px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+   Heading
+========================================== */
+
+.letter h1{
+
+    font-family:'Caveat', cursive;
+
+    font-size:54px;
+
+    color:#6d2c1d;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================
+   Letter Text
+========================================== */
+
+#letterText{
+
+    white-space:pre-line;
+
+    font-size:22px;
+
+    line-height:2.1;
+
+    color:#493423;
+
+}
+
+/* ==========================================
+   Polaroids
+========================================== */
+
+.polaroid{
+
+    position:relative;
+
+    width:170px;
+
+    background:white;
+
+    padding:10px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.2);
+
+    transition:.4s;
+
+    z-index:2;
+
+}
+
+.polaroid img{
+
+    width:100%;
+    height:170px;
+
+    object-fit:cover;
+
+}
+
+.polaroid span{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:10px;
+
+    font-family:'Caveat', cursive;
+
+    font-size:28px;
+
+}
+
+.top-left{
+
+    grid-column:1;
+
+    margin-top:40px;
+
+    transform:rotate(-10deg);
+
+}
+
+.bottom-left{
+
+    grid-column:1;
+
+    margin-top:250px;
+
+    transform:rotate(8deg);
+
+}
+
+.top-right{
+
+    grid-column:3;
+
+    margin-top:70px;
+
+    transform:rotate(10deg);
+
+}
+
+.bottom-right{
+
+    grid-column:3;
+
+    margin-top:280px;
+
+    transform:rotate(-8deg);
+
+}
+
+/* Hover */
+
+.polaroid:hover{
+
+    transform:scale(1.08) rotate(0);
+
+    z-index:20;
+
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width:1100px){
+
+    .polaroid{
+
+        width:140px;
+
+    }
+
+    .polaroid img{
+
+        height:140px;
+
+    }
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:30px 15px;
+
+    }
+
+    .letter{
+
+        width:100%;
+
+        padding:40px 25px;
+
+    }
+
+    .letter h1{
+
+        font-size:42px;
+
+    }
+
+    #letterText{
+
+        font-size:18px;
+
+        line-height:1.9;
+
+    }
+
+    .wax{
+
+        width:55px;
+        height:55px;
+
+        font-size:22px;
+
+        top:-25px;
+
+    }
+
+    /* Hide photos on phones */
+
+    .polaroid{
+
+        display:none;
+
+    }
+
+}
+
+/* ==========================================
+   Small Phones
+========================================== */
+
+@media (max-width:480px){
+
+    .letter{
+
+        padding:35px 20px;
+
+    }
+
+    .letter h1{
+
+        font-size:34px;
+
+    }
+
+    #letterText{
+
+        font-size:17px;
+
+    }
+
+}
+
+#continueBtn{
+
+    margin-top:35px;
+
+    border:none;
+
+    padding:15px 42px;
+
+    border-radius:50px;
+
+    background:#ff6b9f;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#continueBtn:hover{
+
+    transform:scale(1.05);
+
+    background:#ff4b89;
+
+}

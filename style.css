@@ -1,0 +1,1158 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+    min-height:100vh;
+
+    
+    overflow-x:hidden;
+    overflow-y:auto;
+
+
+    font-family:'Quicksand',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #ffd8e8,
+        #ffeef6,
+        #ffd1e3
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+}
+
+/* ==========================================
+BACKGROUND
+========================================== */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:200%;
+
+height:200%;
+
+background:
+
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 20%),
+
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.30),transparent 20%),
+
+radial-gradient(circle at 60% 80%,rgba(255,255,255,.25),transparent 20%);
+
+animation:bgMove 25s linear infinite;
+
+z-index:-2;
+
+}
+
+@keyframes bgMove{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-6%,-3%);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+/* ==========================================
+LANDING
+========================================== */
+
+.landing{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+}
+
+/* ==========================================
+SCRAPBOOK CARD
+========================================== */
+
+.paper{
+
+position:relative;
+
+width:900px;
+
+max-width:95%;
+
+height:560px;
+
+background:#fffdf8;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.15);
+
+background-image:
+
+linear-gradient(#eaded1 1px,transparent 1px),
+
+linear-gradient(90deg,#eaded1 1px,transparent 1px);
+
+background-size:38px 38px;
+
+}
+
+/* Torn paper edges */
+
+.paper::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:220px;
+
+height:160px;
+
+background:#ffc8dc;
+
+clip-path:polygon(
+0 0,
+100% 0,
+82% 20%,
+72% 45%,
+60% 70%,
+35% 100%,
+0 100%
+);
+
+}
+
+.paper::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+
+right:0;
+
+width:220px;
+
+height:180px;
+
+background:#ffc8dc;
+
+clip-path:polygon(
+100% 100%,
+0 100%,
+18% 75%,
+35% 55%,
+52% 35%,
+70% 18%,
+100% 0
+);
+
+}
+
+/* ==========================================
+TITLE
+========================================== */
+
+#typingTitle{
+
+margin-top:80px;
+
+text-align:center;
+
+font-family:'Playfair Display',serif;
+
+font-size:70px;
+
+line-height:1.15;
+
+color:#b51243;
+
+text-shadow:
+
+2px 2px 0 rgba(255,255,255,.6);
+
+}
+
+.subtitle{
+
+margin-top:18px;
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:600;
+
+color:#6a4a56;
+
+}
+
+/* ==========================================
+CONTINUE BUTTON
+========================================== */
+
+.button-wrapper{
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+margin-top:40px;
+
+}
+
+#continueBtn{
+
+padding:18px 55px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:60px;
+
+cursor:pointer;
+
+background:#ff5b95;
+
+color:white;
+
+font-weight:700;
+
+transition:.35s;
+
+box-shadow:
+
+0 10px 25px rgba(255,91,149,.35);
+
+}
+
+#continueBtn:hover{
+
+transform:scale(1.08);
+
+background:#ff3e82;
+
+}
+
+#continueBtn:active{
+
+transform:scale(.95);
+
+}
+/* ==========================================
+   DECORATIONS
+========================================== */
+
+.ribbon{
+    position:absolute;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    width:180px;
+    height:14px;
+    background:#f9b3c8;
+    border-radius:10px;
+    opacity:.8;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.tape{
+    position:absolute;
+    width:90px;
+    height:28px;
+    background:rgba(255,243,184,.8);
+    transform:rotate(-12deg);
+    border-radius:4px;
+}
+
+.tape.left{
+    top:20px;
+    left:40px;
+}
+
+.tape.right{
+    top:20px;
+    right:40px;
+    transform:rotate(12deg);
+}
+
+/* ==========================================
+FLOWERS
+========================================== */
+
+.flower{
+    position:absolute;
+    font-size:42px;
+    animation:floatFlower 6s ease-in-out infinite;
+}
+
+.flower-a{left:35px;top:130px;}
+.flower-b{left:70px;bottom:70px;}
+.flower-c{right:40px;top:120px;}
+.flower-d{right:65px;bottom:80px;}
+
+@keyframes floatFlower{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-10px) rotate(6deg);
+    }
+}
+
+/* ==========================================
+GLITTER
+========================================== */
+
+.glitter{
+    position:absolute;
+    font-size:20px;
+    animation:twinkle 2s infinite;
+}
+
+.g1{top:80px;left:220px;}
+.g2{top:160px;right:180px;}
+.g3{bottom:120px;left:180px;}
+.g4{bottom:90px;right:220px;}
+.g5{top:260px;left:120px;}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.3;
+        transform:scale(.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* ==========================================
+HEARTS
+========================================== */
+
+.heart{
+    position:absolute;
+    color:#ff4d88;
+    font-size:24px;
+    animation:heartbeat 1.5s infinite;
+}
+
+.heart1{left:180px;top:260px;}
+.heart2{right:180px;top:260px;}
+.heart3{left:50%;bottom:110px;}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+/* ==========================================
+NOTE
+========================================== */
+
+.note{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:10px 24px;
+    background:#fff7d8;
+    border-radius:12px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+    font-size:15px;
+    color:#7d5a5a;
+    font-weight:600;
+}
+
+/* ==========================================
+FOOTER
+========================================== */
+
+.footer-message{
+    position:absolute;
+    width:100%;
+    bottom:8px;
+    text-align:center;
+    color:#b56b84;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.paper{
+    height:auto;
+    min-height:92vh;
+    padding:25px;
+}
+
+#typingTitle{
+    font-size:48px;
+    margin-top:60px;
+}
+
+.subtitle{
+    font-size:18px;
+}
+
+#continueBtn{
+    width:85%;
+    font-size:20px;
+    padding:16px;
+}
+
+.flower{
+    font-size:30px;
+}
+
+.note{
+    width:90%;
+    text-align:center;
+}
+
+.ribbon{
+    width:130px;
+}
+
+}
+/* ==========================================
+   PAGE ENTRANCE
+========================================== */
+
+body{
+    animation:pageFade .9s ease;
+}
+
+@keyframes pageFade{
+    from{
+        opacity:0;
+        transform:scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ==========================================
+TITLE
+========================================== */
+
+#typingTitle{
+    animation:titleFloat 4s ease-in-out infinite;
+}
+
+@keyframes titleFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+/* ==========================================
+BUTTON
+========================================== */
+
+#continueBtn{
+
+animation:buttonPulse 2s infinite;
+
+}
+
+@keyframes buttonPulse{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.06);
+}
+
+}
+
+/* ==========================================
+SPARKLES
+========================================== */
+
+.glitter{
+
+animation:
+sparkle 2s infinite,
+rotateStar 10s linear infinite;
+
+}
+
+@keyframes sparkle{
+
+0%,100%{
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes rotateStar{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ==========================================
+FLOWERS
+========================================== */
+
+.flower{
+
+animation:
+
+flowerFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes flowerFloat{
+
+0%,100%{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+}
+
+50%{
+
+transform:
+translateY(-12px)
+rotate(10deg);
+
+}
+
+}
+
+/* ==========================================
+HEARTS
+========================================== */
+
+.heart{
+
+animation:
+
+heartBeat 1.5s infinite;
+
+}
+
+@keyframes heartBeat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+25%{
+
+transform:scale(1.2);
+
+}
+
+50%{
+
+transform:scale(.95);
+
+}
+
+75%{
+
+transform:scale(1.15);
+
+}
+
+}
+
+/* ==========================================
+PAPER
+========================================== */
+
+.paper{
+
+animation:
+
+paperDrop 1.2s ease;
+
+}
+
+@keyframes paperDrop{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(-80px)
+rotate(-2deg);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+rotate(0deg);
+
+}
+
+}
+
+/* ==========================================
+FLOATING BACKGROUND
+========================================== */
+
+body::before{
+
+animation:
+
+backgroundMove 25s linear infinite;
+
+}
+
+@keyframes backgroundMove{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:
+
+translate(-4%,-2%);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+/* ==========================================
+FOOTER
+========================================== */
+
+.footer-message{
+
+animation:
+
+footerGlow 3s infinite;
+
+}
+
+@keyframes footerGlow{
+
+0%,100%{
+
+opacity:.6;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* ==========================================
+NOTE
+========================================== */
+
+.note{
+
+animation:
+
+noteFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes noteFloat{
+
+0%,100%{
+
+transform:
+
+translateX(-50%)
+translateY(0);
+
+}
+
+50%{
+
+transform:
+
+translateX(-50%)
+translateY(-6px);
+
+}
+
+}
+/* ==========================================
+   CLEAN OVERRIDES (NO HTML CHANGES NEEDED)
+   Paste this at the END of your CSS
+========================================== */
+
+/* Keep only the page fade-in */
+body{
+    animation: pageFade .8s ease forwards;
+}
+
+/* Stop moving background */
+body::before{
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Keep paper fixed after entrance */
+.paper{
+    animation: paperDrop .8s ease forwards;
+}
+
+/* Stop title bobbing */
+#typingTitle{
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Stop flower movement */
+.flower{
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Stop heart pulsing */
+.heart{
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Stop glitter rotation and blinking */
+.glitter{
+    animation: none !important;
+    transform: none !important;
+    opacity: 1;
+}
+
+/* Stop note floating */
+.note{
+    animation: none !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Stop footer glow */
+.footer-message{
+    animation: none !important;
+    opacity: 1;
+}
+
+/* Stop ribbon movement if any */
+.ribbon,
+.tape,
+.star,
+.leaf{
+    animation: none !important;
+}
+
+/* Keep button still */
+#continueBtn{
+    animation: none !important;
+}
+
+#continueBtn:hover{
+    transform: scale(1.05);
+    transition: .25s ease;
+}
+
+#continueBtn:active{
+    transform: scale(.97);
+}
+
+/* Disable any accidental animations on decorations */
+.flower1,
+.flower2,
+.flower3,
+.flower4,
+.heart1,
+.heart2,
+.heart3,
+.star1,
+.star2,
+.star3,
+.petal,
+.corner,
+.divider,
+.subtitle,
+.button-wrapper,
+.left-decoration,
+.right-decoration{
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Keep only the entrance animations */
+@keyframes pageFade{
+    from{
+        opacity:0;
+        transform:scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes paperDrop{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* ==========================================
+   UNIVERSAL RESPONSIVE OVERRIDE
+   Paste at the VERY END of every CSS file
+========================================== */
+
+html{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/* Main containers */
+
+.paper,
+.glass,
+.letter,
+.container,
+.landing,
+.wrapper{
+    width:min(95%, 900px) !important;
+    max-width:95% !important;
+    height:auto !important;
+    min-height:auto !important;
+    margin:auto;
+}
+
+/* Images */
+
+img{
+    max-width:100% !important;
+    height:auto !important;
+    display:block;
+}
+
+/* Buttons */
+
+button{
+    max-width:100%;
+}
+
+/* ==========================================
+   TABLETS & PHONES
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .paper,
+    .glass,
+    .letter,
+    .container,
+    .landing,
+    .wrapper{
+        width:100% !important;
+        max-width:100% !important;
+        padding:20px !important;
+        border-radius:20px !important;
+    }
+
+    h1{
+        font-size:clamp(2rem,8vw,3rem) !important;
+    }
+
+    h2{
+        font-size:clamp(1.3rem,6vw,2rem) !important;
+    }
+
+    p{
+        font-size:16px !important;
+    }
+
+    button{
+        width:100% !important;
+    }
+
+    /* Hide decorative photos on phones */
+
+    .polaroid{
+        display:none !important;
+    }
+
+    /* Decorative elements smaller */
+
+    .flower,
+    .heart,
+    .glitter,
+    .star{
+        transform:scale(.75);
+    }
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        font-size:1.8rem !important;
+    }
+
+    h2{
+        font-size:1.3rem !important;
+    }
+
+    p{
+        font-size:15px !important;
+    }
+}
+/* ==========================================
+   REMOVE PINK OVERLAYS
+========================================== */
+
+.paper::before,
+.paper::after{
+    content:none !important;
+    display:none !important;
+}
+
+/* Remove decorative corner overlays */
+
+.corner{
+    display:none !important;
+}
+/* ==========================================
+   FIX OVERLAPPING TEXT
+========================================== */
+
+/* Title */
+
+.title-box{
+    position:relative !important;
+    z-index:10;
+    margin-top:60px;
+    text-align:center;
+}
+
+/* Main title */
+
+#typingTitle{
+    margin:0;
+    line-height:1.15;
+}
+
+/* Subtitle */
+
+.subtitle{
+    margin-top:20px;
+    margin-bottom:35px;
+    line-height:1.6;
+}
+
+/* Sticky note */
+
+.note{
+
+    position:relative;
+
+    top:35px;
+    left:50%;
+
+    transform:translateX(-50%) rotate(-3deg);
+
+    padding:6px 6px;
+
+    background:#fff7d8;
+
+    border-radius:0px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+
+    font-size:15px;
+
+    color:#7d5a5a;
+
+    font-weight:600;
+
+    z-index:10;
+
+}
+
+/* Button section */
+
+.button-wrapper{
+
+    position:relative;
+
+    margin-top:50px;
+
+    z-index:10;
+
+}
+
+/* Hint */
+
+.hint{
+
+    margin-top:70px;
+
+    color:#9b6a79;
+
+}
+
+/* Footer */
+
+.footer-message{
+
+    position:relative;
+
+    bottom:40px;
+
+    width:100%;
+
+    text-align:center;
+
+    z-index:10;
+
+}
+
+/* Decorative elements behind text */
+
+.heart,
+.star,
+.glitter{
+
+    z-index:1;
+
+}

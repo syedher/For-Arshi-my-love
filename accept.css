@@ -1,0 +1,455 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Quicksand',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#ffd6e7,#ffeef6,#fff8fc);
+
+}
+
+.background{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:100%;
+
+height:100%;
+
+}
+
+.card{
+
+width:520px;
+
+max-width:90%;
+
+background:white;
+
+padding:45px;
+
+border-radius:30px;
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.12);
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-80px;
+
+left:-80px;
+
+width:180px;
+
+height:180px;
+
+background:#ffd2e3;
+
+border-radius:50%;
+
+opacity:.5;
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-90px;
+
+right:-90px;
+
+width:220px;
+
+height:220px;
+
+background:#ffd2e3;
+
+border-radius:50%;
+
+opacity:.5;
+
+}
+
+#teddy{
+
+font-size:110px;
+
+animation:float 3s ease-in-out infinite;
+
+user-select:none;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+.speech{
+
+margin-top:15px;
+
+}
+
+.speech h2{
+
+font-size:34px;
+
+color:#e83f7b;
+
+margin-bottom:15px;
+
+}
+
+.speech p{
+
+font-size:20px;
+
+line-height:1.7;
+
+color:#555;
+
+}
+
+.buttons{
+
+margin-top:35px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+button{
+
+padding:15px 38px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.35s;
+
+font-weight:bold;
+
+}
+
+#yes{
+
+background:#ff5b95;
+
+color:white;
+
+box-shadow:0 8px 18px rgba(255,91,149,.35);
+
+}
+
+#yes:hover{
+
+transform:scale(1.08);
+
+background:#ff3e82;
+
+}
+
+#no{
+
+background:white;
+
+border:3px solid #ff5b95;
+
+color:#ff5b95;
+
+position:relative;
+
+}
+
+#no:hover{
+
+background:#fff2f7;
+
+}
+
+.floatingHeart{
+
+position:fixed;
+
+bottom:-50px;
+
+animation:rise linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes rise{
+
+to{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+.spark{
+
+position:fixed;
+
+animation:twinkle 2s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:0;
+
+transform:scale(.4);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(.4);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.card{
+
+padding:30px;
+
+}
+
+#teddy{
+
+font-size:85px;
+
+}
+
+.speech h2{
+
+font-size:28px;
+
+}
+
+.speech p{
+
+font-size:17px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+/* ==========================================
+   UNIVERSAL RESPONSIVE OVERRIDE
+   Paste at the VERY END of every CSS file
+========================================== */
+
+html{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/* Main containers */
+
+.paper,
+.glass,
+.letter,
+.container,
+.landing,
+.wrapper{
+    width:min(95%, 900px) !important;
+    max-width:95% !important;
+    height:auto !important;
+    min-height:auto !important;
+    margin:auto;
+}
+
+/* Images */
+
+img{
+    max-width:100% !important;
+    height:auto !important;
+    display:block;
+}
+
+/* Buttons */
+
+button{
+    max-width:100%;
+}
+
+/* ==========================================
+   TABLETS & PHONES
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .paper,
+    .glass,
+    .letter,
+    .container,
+    .landing,
+    .wrapper{
+        width:100% !important;
+        max-width:100% !important;
+        padding:20px !important;
+        border-radius:20px !important;
+    }
+
+    h1{
+        font-size:clamp(2rem,8vw,3rem) !important;
+    }
+
+    h2{
+        font-size:clamp(1.3rem,6vw,2rem) !important;
+    }
+
+    p{
+        font-size:16px !important;
+    }
+
+    button{
+        width:100% !important;
+    }
+
+    /* Hide decorative photos on phones */
+
+    .polaroid{
+        display:none !important;
+    }
+
+    /* Decorative elements smaller */
+
+    .flower,
+    .heart,
+    .glitter,
+    .star{
+        transform:scale(.75);
+    }
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        font-size:1.8rem !important;
+    }
+
+    h2{
+        font-size:1.3rem !important;
+    }
+
+    p{
+        font-size:15px !important;
+    }
+}
