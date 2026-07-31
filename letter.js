@@ -50,7 +50,7 @@ nextBtn.addEventListener("click", () => {
 
     setTimeout(() => {
 
-        window.location.href = "photo.html";
+        window.location.href = "video.html";
 
     }, 800);
 
