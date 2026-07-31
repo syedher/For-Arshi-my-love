@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Just Watch This ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+
+    width:100%;
+    min-height:100%;
+
+    background:#000;
+
+    font-family:'Quicksand',sans-serif;
+
+    color:white;
+
+}
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px 15px;
+
+}
+
+.container{
+
+    width:100%;
+    max-width:1000px;
+
+    text-align:center;
+
+}
+
+h1{
+
+    font-size:clamp(2rem,5vw,3rem);
+
+    margin-bottom:12px;
+
+}
+
+.subtitle{
+
+    color:#dddddd;
+
+    margin-bottom:30px;
+
+    line-height:1.8;
+
+}
+
+.video-box{
+
+    width:100%;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 60px rgba(255,255,255,.12);
+
+}
+
+video{
+
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    background:black;
+
+}
+
+#continueBtn{
+
+    margin-top:35px;
+
+    border:none;
+
+    background:#ff5f95;
+
+    color:white;
+
+    padding:16px 45px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#continueBtn:hover{
+
+    background:#ff3d80;
+
+    transform:scale(1.05);
+
+}
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px 10px;
+
+    }
+
+    .subtitle{
+
+        font-size:15px;
+
+    }
+
+    #continueBtn{
+
+        width:90%;
+        max-width:320px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>One Last Thing... ❤️</h1>
+
+    <p class="subtitle">
+        I wanted you to see this too.
+    </p>
+
+    <div class="video-box">
+
+        <!-- Replace with your video -->
+        <video controls playsinline>
+
+            <source src="video.mp4" type="video/mp4">
+
+            Your browser doesn't support video.
+
+        </video>
+
+    </div>
+
+    <button id="continueBtn">
+
+        Continue ❤️
+
+    </button>
+
+</div>
+
+<script>
+
+const btn=document.getElementById("continueBtn");
+
+btn.addEventListener("click",()=>{
+
+    document.body.style.transition=".8s";
+
+    document.body.style.opacity="0";
+
+    setTimeout(()=>{
+
+        window.location.href="song.html";
+
+    },800);
+
+});
+
+</script>
+
+</body>
+
+</html>

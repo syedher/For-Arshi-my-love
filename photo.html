@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:black;
+
+}
+
+.photo{
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+}
+
+.photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    animation:zoom 15s ease-in-out infinite alternate;
+
+}
+
+#continueBtn{
+
+    position:absolute;
+
+    bottom:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:16px 45px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#continueBtn:hover{
+
+    background:rgba(255,255,255,.3);
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.06);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #continueBtn{
+
+        width:85%;
+        max-width:300px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="photo">
+
+    <!-- Change this to your image -->
+    <img src="myphoto.jpg" alt="Our Photo">
+
+    <button id="continueBtn">
+        Continue ❤️
+    </button>
+
+</div>
+
+<script>
+
+document.getElementById("continueBtn").addEventListener("click",()=>{
+
+    document.body.style.transition=".8s";
+
+    document.body.style.opacity="0";
+
+    setTimeout(()=>{
+
+        window.location.href="video.html";
+
+    },800);
+
+});
+
+</script>
+
+</body>
+
+</html>
