@@ -417,3 +417,57 @@ body::before{
     background:#ff4b89;
 
 }
+/* ===============================
+   MOBILE FIX
+================================ */
+
+@media screen and (max-width:768px){
+
+    body{
+        display:block;
+        padding:20px 12px;
+    }
+
+    .letter-scene{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .letter{
+        position:relative;
+        left:auto;
+        top:auto;
+        transform:none;
+
+        width:100%;
+        max-width:100%;
+
+        min-height:auto;
+
+        padding:35px 22px;
+
+        margin:40px auto;
+    }
+
+    .letter h1{
+        font-size:36px;
+    }
+
+    #letterText{
+        font-size:18px;
+        line-height:2;
+    }
+
+    .wax{
+        width:55px;
+        height:55px;
+        top:-25px;
+        right:20px;
+    }
+
+    /* Hide polaroids on phones */
+    .polaroid{
+        display:none;
+    }
+}
