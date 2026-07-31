@@ -309,56 +309,6 @@ body::before{
    Mobile
 ========================================== */
 
-@media (max-width:768px){
-
-    body{
-
-        padding:30px 15px;
-
-    }
-
-    .letter{
-
-        width:100%;
-
-        padding:40px 25px;
-
-    }
-
-    .letter h1{
-
-        font-size:42px;
-
-    }
-
-    #letterText{
-
-        font-size:18px;
-
-        line-height:1.9;
-
-    }
-
-    .wax{
-
-        width:55px;
-        height:55px;
-
-        font-size:22px;
-
-        top:-25px;
-
-    }
-
-    /* Hide photos on phones */
-
-    .polaroid{
-
-        display:none;
-
-    }
-
-}
 
 /* ==========================================
    Small Phones
@@ -421,6 +371,10 @@ body::before{
    MOBILE FIX
 ================================ */
 
+/* ==========================================
+   MOBILE FIX
+========================================== */
+
 @media screen and (max-width:768px){
 
     body{
@@ -429,45 +383,107 @@ body::before{
     }
 
     .letter-scene{
+
+        display:block;
+
         width:100%;
-        height:auto;
-        position:relative;
+        max-width:100%;
+
+        margin:0 auto;
+
     }
 
     .letter{
-        position:relative;
-        left:auto;
-        top:auto;
-        transform:none;
 
         width:100%;
         max-width:100%;
 
         min-height:auto;
 
+        margin:30px auto;
+
         padding:35px 22px;
 
-        margin:40px auto;
+        position:relative;
+
+        left:auto;
+        top:auto;
+        transform:none;
+
+        grid-column:auto;
     }
 
     .letter h1{
-        font-size:36px;
+
+        font-size:38px;
+
     }
 
     #letterText{
+
         font-size:18px;
         line-height:2;
+
     }
 
     .wax{
+
         width:55px;
         height:55px;
+
         top:-25px;
-        right:20px;
+        right:18px;
+
+        font-size:22px;
+
     }
 
-    /* Hide polaroids on phones */
     .polaroid{
-        display:none;
+
+        display:none !important;
+
     }
+
+    #continueBtn{
+
+        width:100%;
+        margin-top:35px;
+
+        padding:16px;
+
+        font-size:18px;
+
+    }
+
+}
+
+/* Small Phones */
+
+@media screen and (max-width:480px){
+
+    body{
+
+        padding:15px 10px;
+
+    }
+
+    .letter{
+
+        padding:28px 18px;
+
+    }
+
+    .letter h1{
+
+        font-size:32px;
+
+    }
+
+    #letterText{
+
+        font-size:17px;
+        line-height:1.9;
+
+    }
+
 }
