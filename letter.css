@@ -62,27 +62,20 @@ body::before{
 ========================================== */
 
 .letter-scene{
-
+    position:relative;
     width:100%;
-    max-width:1400px;
-
+    max-width:1200px;
     margin:60px auto;
-
-    display:grid;
-
-    grid-template-columns:220px 1fr 220px;
-
-    gap:40px;
-
-    align-items:start;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 /* ==========================================
    LETTER
 ========================================== */
 
-.letter{
+/*.letter{
 
     position:relative;
 
@@ -107,6 +100,17 @@ body::before{
     box-shadow:
     0 25px 60px rgba(0,0,0,.25);
 
+}*/
+.letter{
+    position:relative;
+    width:650px;
+    max-width:100%;
+    min-height:700px;
+    padding:70px;
+    background:#f8ecd2;
+    border-radius:8px;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+    z-index:2;
 }
 
 /* Burn edges */
@@ -193,7 +197,7 @@ body::before{
    Polaroids
 ========================================== */
 
-.polaroid{
+/*.polaroid{
 
     position:relative;
 
@@ -275,7 +279,6 @@ body::before{
 
 }
 
-/* Hover */
 
 .polaroid:hover{
 
@@ -283,6 +286,59 @@ body::before{
 
     z-index:20;
 
+}*/
+.polaroid{
+    position:absolute;
+    width:170px;
+    background:#fff;
+    padding:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+    transition:.35s;
+    z-index:3;
+}
+
+.polaroid img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+.polaroid p{
+    text-align:center;
+    margin-top:10px;
+    font-family:'Caveat',cursive;
+    font-size:28px;
+}
+
+/* Positions */
+
+.top-left{
+    left:-40px;
+    top:40px;
+    transform:rotate(-12deg);
+}
+
+.top-right{
+    right:-40px;
+    top:60px;
+    transform:rotate(10deg);
+}
+
+.bottom-left{
+    left:-50px;
+    bottom:40px;
+    transform:rotate(8deg);
+}
+
+.bottom-right{
+    right:-50px;
+    bottom:40px;
+    transform:rotate(-8deg);
+}
+
+.polaroid:hover{
+    transform:scale(1.08) rotate(0);
+    z-index:20;
 }
 
 /* ==========================================
